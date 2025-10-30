@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's the Human? - Thumbnail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Arial Black', 'Arial Bold', sans-serif;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 40px;
+        }
+        
+        .avatars {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 80px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .mystery {
+            position: relative;
+        }
+        
+        .mystery::after {
+            content: '?';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .title {
+            font-size: 96px;
+            font-weight: 900;
+            text-align: center;
+            color: white;
+            text-shadow: 
+                0 0 20px rgba(59, 130, 246, 0.8),
+                0 0 40px rgba(59, 130, 246, 0.5),
+                4px 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .highlight {
+            color: #3b82f6;
+        }
+        
+        .subtitle {
+            font-size: 40px;
+            font-weight: bold;
+            color: #3b82f6;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .badge {
+            background: rgba(59, 130, 246, 0.2);
+            border: 2px solid #3b82f6;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #60a5fa;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .corner-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: #fbbf24;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="thumbnail">
+        <div class="corner-badge">Chrome AI</div>
+        
+        <div class="avatars">
+            <div class="avatar">😊</div>
+            <div class="avatar mystery">🤖</div>
+            <div class="avatar">👤</div>
+            <div class="avatar">🤖</div>
+        </div>
+        
+        <div class="title">
+            WHO'S THE <span class="highlight">HUMAN?</span>
+        </div>
+        
+        <div class="subtitle">
+            Can You Fool the AI?
+        </div>
+        
+        <div class="badge">
+            Powered by Chrome Built-in AI + Gemini Nano
+        </div>
+        
+        <div class="instructions">
+            📸 INSTRUCTIONS: Open this file in Chrome, press F11 for fullscreen, then take a screenshot (Win: Win+Shift+S, Mac: Cmd+Shift+4)
+            <br>Use this as your thumbnail! (1280x720px)
+        </div>
+    </div>
+    
+    <script>
+        // Auto-hide instructions after 5 seconds
+        setTimeout(() => {
+            const instructions = document.querySelector('.instructions');
+            if (instructions) {
+                instructions.style.transition = 'opacity 1s';
+                instructions.style.opacity = '0';
+                setTimeout(() => instructions.remove(), 1000);
+            }
+        }, 5000);
+        
+        // Press 'H' to hide/show instructions manually
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'h' || e.key === 'H') {
+                const instructions = document.querySelector('.instructions');
+                if (instructions) {
+                    instructions.style.display = instructions.style.display === 'none' ? 'block' : 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

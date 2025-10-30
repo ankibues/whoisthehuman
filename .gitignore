@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Markdown files (except README.md)
+*.md
+!README.md
+!LICENSE
+
+# Development documentation (keep locally, not in repo)
+DEMO_CHECKLIST.md
+GITHUB_SETUP.md
+HACKATHON_SUBMISSION.md
+PROJECT_SUMMARY.md
+QUICK_REFERENCE.md
+QUICK_START.md
+SETUP.md
+START_HERE.md
+VISUAL_OVERVIEW.md
